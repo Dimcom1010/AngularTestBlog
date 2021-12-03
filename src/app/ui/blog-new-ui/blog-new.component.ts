@@ -18,8 +18,6 @@ export class BlogNewComponent implements OnInit {
 
   @Output()//декорирует некоторое свойство класс
   create = new EventEmitter<{ name:string, topic:string, text:string, tegs:string[]}>(); // событие по созданию нового блока
-  @Output()//декорирует некоторое свойство класс
-  closeCreature = new EventEmitter<void>(); // событие по созданию нового блока
 
 
   constructor(private dataService: MyBlogService) { }
@@ -52,7 +50,7 @@ export class BlogNewComponent implements OnInit {
         this.formInit.topic=''
         this.formInit.text=''
         this.formInit.tegform=''
-        this.closeCreature.emit()
+
         }
   }
 

@@ -1,6 +1,6 @@
 
 <app-blog-readable-ui [userId]="userId$ | async"
-
+                      (createComment)="onCreateComment($event)"
                       ></app-blog-readable-ui>
 <!--(disabledLike)="onDisabledLike($event)"-->
 <!--(clickDisLike)="onClickDisLike($event)"-->

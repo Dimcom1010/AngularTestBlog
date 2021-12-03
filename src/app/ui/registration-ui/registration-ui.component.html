@@ -15,4 +15,4 @@
   <button   mat-flat-button  color="primary" [disabled]="!regFormInit.name || !regFormInit.login || !regFormInit.password">Зарезистрироваться</button>
 
 </form>
-<button  mat-flat-button   color="primary" (click)="onCloseAdd()">У меня уже есть профиль</button>
+<button  mat-flat-button   color="primary" routerLink="/login">У меня уже есть профиль</button>

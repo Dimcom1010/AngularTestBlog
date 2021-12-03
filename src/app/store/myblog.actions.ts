@@ -11,6 +11,7 @@ export enum myblogActionType  {
   login= "[MYBLOG]  is user login",
   logOut= "[MYBLOG]  is user logOut",
   createUser= "[MYBLOG] create new user",
+  createComment= "[MYBLOG] create new comment",
 
 }
 export class BlogLoadStateActions implements Action {
@@ -55,6 +56,12 @@ export class createUserActions implements Action {
   readonly type = myblogActionType.createUser;
   constructor(public payload: {name:string, login: string, password: string }){}}
 
+export class MyblogCreateComment implements Action {
+  readonly type = myblogActionType.createComment;
+  constructor(public payload:{comment:string,id:number}) {}
+}
+
+
 //список экшенов
 export type MyblogActions =
   BlogLoadStateActions|
@@ -65,6 +72,7 @@ export type MyblogActions =
   MyblogDisLikeActions|
   LoginActions|
   LogOutActions|
+  MyblogCreateComment|
 
   createUserActions;
 //12-е добавляем MyblogDisabledLikeActions в список экшенов|==> myblog.reduser.ts

@@ -16,9 +16,13 @@
         (click)="onClickDisLike(blogInfo.id)"
         *ngIf="blogInfo.like_position | lilePosution:userId">DisLike</button>
 
-
-
-
+<form class="example-form" action="#" (ngSubmit)="onComment(commentForm,blogInfo.id)" #commentForm="ngForm" >
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Ваш коментарий</mat-label>
+    <textarea matInput placeholder="Введите текст" value="" type="text" name="comment" #comment="ngModel"  [(ngModel)]="comment1" ></textarea>
+  </mat-form-field><br>
+  <button  ng-disabled="login.$invalid" mat-flat-button   color="primary" [disabled]="!comment1">Сохранить</button>
+</form>
 
 
 

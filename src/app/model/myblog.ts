@@ -9,6 +9,7 @@ export  interface  Myblog {
   dataCreature: string;
   comments?:any
 
+
 }
 export  interface  Login {
   id: number;

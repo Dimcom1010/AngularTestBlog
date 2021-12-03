@@ -44,6 +44,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { CommentsComponent } from './ui/comments/comments.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import { BlogReadableWidgetComponent } from './widget/blog-readable-widget/blog-readable-widget.component';
+import { BlogNewWidgetComponent } from './widget/blog-new-widget/blog-new-widget.component';
+import { RegistrationWidgetComponent } from './widget/registration-widget/registration-widget.component';
 
 
 
@@ -72,6 +74,8 @@ import { BlogReadableWidgetComponent } from './widget/blog-readable-widget/blog-
     NumberInArrayPipe,
     CommentsComponent,
     BlogReadableWidgetComponent,
+    BlogNewWidgetComponent,
+    RegistrationWidgetComponent,
 
 
 

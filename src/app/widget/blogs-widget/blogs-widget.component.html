@@ -1,15 +1,7 @@
-<mat-card>
-<button mat-flat-button   color="primary"  type="button" (click)="onClickAdd()" *ngIf="!onAdd">+ Создать новый блог</button><br>
-<button mat-flat-button   color="primary"  type="button" (click)="closeCreature()" *ngIf="onAdd">Не создавать</button><br>
-  </mat-card>
-  <app-blog-new *ngIf="onAdd"
-            (closeCreature) ="closeCreature()"
-            (create)="onCreateNewBlog($event)"
-></app-blog-new>
 
 <app-blogs [blogList]="blogList$ | async"
            [admin]="admin$ | async"
-           *ngIf="!onAdd"
+
            (deleteBlog)="onDeleteBlog($event)"
            (disabledLike)="onDisabledLike($event)"
 

@@ -25,10 +25,11 @@ export class LoginUiComponent implements OnInit {
   ngOnInit(): void {}
 
   onLogin(loginForm: NgForm){
-    if (loginForm.value){
+    if (loginForm.value.login && loginForm.value.password
+    ){
       this.onCheckPassword(loginForm.value.login,loginForm.value.password)
       this.loginFormInit.login = '',
-        this.loginFormInit.password = ''
+      this.loginFormInit.password = ''
     }
   }
 

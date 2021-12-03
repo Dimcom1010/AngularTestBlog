@@ -1,11 +1,5 @@
 
 <app-login-ui
-  *ngIf="!onAddUser"
-  (Add)="onClickAdd($event)"
+
 ></app-login-ui>
-<app-registration-ui
-  *ngIf="onAddUser"
-  (createUser)="onCreateUser($event)"
-  (CloseAdd)="closeCreature($event)"
-></app-registration-ui>
 

@@ -20,7 +20,7 @@ import {Myblog} from "../../model/myblog";
 export class LoginWidgetComponent implements OnInit {
 
   loadList$: Observable<Myblog[]> = this.store$.pipe(select(myblogListSelector))
-  onAddUser:any=false
+
 
   constructor(private store$: Store<MyblogState>,
               private loadSelector: MyBlogService,) { }
@@ -28,14 +28,6 @@ export class LoginWidgetComponent implements OnInit {
   ngOnInit(): void {
     this.loadSelector.init();
   }
-  onClickAdd= ($event: boolean)=>{
-    this.onAddUser=true
-  }
-  closeCreature($event: boolean){
-    this.onAddUser=false
-  }
-  // @ts-ignore
-  onCreateUser({name, login, password}){
-    this.store$.dispatch(new createUserActions({name,login,password} ));
-  }
+
+
 }

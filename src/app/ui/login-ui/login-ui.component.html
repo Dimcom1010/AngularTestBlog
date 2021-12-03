@@ -14,7 +14,7 @@
   <button  ng-disabled="login.$invalid || password.$invalid " mat-flat-button   color="primary" [disabled]="!loginFormInit.login || !loginFormInit.password">Войти</button>
  </form>
 
-<button   mat-flat-button   color="primary" (click)="onAdd()" >Создать профиль</button>
+<button   mat-flat-button   color="primary" (click)="onAdd()"  routerLink="/registration">Создать профиль</button>
 <br>
 
 

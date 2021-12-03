@@ -1,20 +1,13 @@
-<mat-card>
-<mat-list role="list">
+<mat-card >
 
-  <mat-list-item role="listitem">
+<mat-list role="list" [routerLink]="['/blogs',blog.id]" class="cursor_point">
 
-      <button [routerLink]="['/blogs',blog.id]"
-              mat-raised-button color="primary"
-              matBadge={{blog.likes}}
-              matBadgePosition="before"
-              matBadgeColor="accent">
-        Перейти на блог с темой <span class="big_text">{{blog.topic}}</span>
-      </button>
 
-  </mat-list-item>
+  <mat-list-item role="listitem">тема:   {{blog.topic}}</mat-list-item>
   <mat-list-item role="listitem">Имя автора:   {{blog.name}} </mat-list-item>
   <mat-list-item role="listitem">Время создания:    {{blog.dataCreature}}</mat-list-item>
   <mat-list-item role="listitem">Количество лайков: {{blog.like_position| numberInArray}}</mat-list-item>
+
 </mat-list>
 
 
@@ -26,12 +19,3 @@
         *ngIf="admin">Редактировать блог</button>
 <br>
 </mat-card>
-<!--<button mat-flat-button  color="primary" class="button_item"-->
-<!--        (click)="onClickLike(blog.id)"-->
-<!--        *ngIf="!(blog.like_position | lilePosution:blog.id)">Лайк</button>-->
-
-<!--<button mat-flat-button   color="primary" class="button_item"-->
-<!--        (click)="onClickDisLike(blog.id)"-->
-<!--        *ngIf="blog.like_position | lilePosution:blog.id">DisLike</button>-->
-
-

@@ -1,10 +1,12 @@
-<mat-card>
+
 <mat-form-field class="example-full-width" appearance="fill" >
   <mat-label>Поиск по темам</mat-label>
   <input matInput placeholder="тема" type="text" name="password" [(ngModel)]="searchStr" >
 </mat-form-field><br>
 
 <!--// компонент отрисовывает либо БЛОГ либо БЛОГ В РЕЖИМЕ РЕДАКТИРОВАНИЯ-->
+<button mat-flat-button   color="primary"  type="button" [routerLink]="['/new']">+ Создать новый блог</button><br>
+
 <div *ngFor="let blog of blogList | searchPipe:searchStr ">
 
   <app-blog-display-ui *ngIf="!editIds.includes(blog.id)"
@@ -25,4 +27,3 @@
   ></app-blog-edit-ui>
 </div>
 <!-- *4 (edit)=приходит из blog-edit-ui и мы видем его петерь в blogs добавляем id-->
-  </mat-card>

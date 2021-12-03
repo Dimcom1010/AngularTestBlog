@@ -19,7 +19,8 @@ export class BlogsService {
     tegs:["Пустой","Пустой", "Пустой","Пустой"],
     like_position: [],
     dataCreature: new Date(2021,1,1,12,32,54).toDateString(),
-    comments:[]
+    comments:[],
+
 
   }
   key:number=0
@@ -44,8 +45,7 @@ export class BlogsService {
             dataCreature:x.dataCreature,
             comments:this.com
           }
-          console.log("blogList")
-          console.log(this.com)
+
         }
 
 

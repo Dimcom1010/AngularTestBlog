@@ -10,7 +10,7 @@ export class SearchPipePipe implements PipeTransform {
   transform(users:Myblog[],value:string) {
 
 
-    return users.filter(user => {return user.topic.includes(value)})
+    return users.filter(user => {return user.topic.toLowerCase().includes(value.toLowerCase())})
   }
 
 }

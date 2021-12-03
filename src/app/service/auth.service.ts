@@ -17,7 +17,6 @@ export class AuthService {
   password:string=''
   admin:boolean=false
 
-  usersLogin:string[]=[]
   usersPassword:string[]=[]
   break:boolean =true
 
@@ -27,7 +26,6 @@ export class AuthService {
 
 
   onOut(){
-    debugger
     let status:boolean=false
     this.store$.dispatch(new LogOutActions({status}))
   }

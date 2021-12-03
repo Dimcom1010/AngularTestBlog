@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration-ui',
@@ -12,8 +13,8 @@ export class RegistrationUiComponent implements OnInit {
     login : '',
     password : '',
   }
-  constructor() { }
-  @Output()//декорирует некоторое свойство класс
+  constructor(private router:Router) { }
+  @Output()
   createUser = new EventEmitter<{  name:string, login:string, password:string}>(); // событие по созданию нового блока
 
   @Output()
@@ -23,18 +24,20 @@ export class RegistrationUiComponent implements OnInit {
   }
   onRegistrat(regForm: NgForm){
 
-    if (regForm.value.name && regForm.value.login && regForm.value.password ){
+    if (regForm.value.name &&
+
+      regForm.value.login  &&
+
+      regForm.value.password
+){
 
         this.createUser.emit({name:regForm.value.name, login:regForm.value.login, password:regForm.value.password })
+        this.regFormInit.name=''
         this.regFormInit.login=''
         this.regFormInit.password=''
-        this.onCloseAdd()
-
+        this.router.navigateByUrl('/home')
     }
   }
-  onCloseAdd(){
-    console.log('onCloseAdd')
-    this.CloseAdd.emit(true)
-  }
+
 
 }

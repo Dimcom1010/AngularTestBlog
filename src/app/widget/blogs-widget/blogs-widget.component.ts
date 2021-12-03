@@ -22,17 +22,14 @@ export class BlogsWidgetComponent implements OnInit {
 
 //Observable хронит массив blogList с типом Myblog
   isAuth:boolean=false
-   onAdd:boolean=false
+   // onAdd:boolean=false
 
   blogList$: Observable<Myblog[]> = this.store$.pipe(select(myblogListSelector)) ;// из хронилища возвращается обрёрвибал
   admin$: Observable<boolean> = this.store$.pipe(select(UserAdmin))
 
-
   constructor(private store$: Store<MyblogState>,
               private myBlogSyncStorage: MyBlogService, // подписка на обновления стора
-
               ) { } // подгружаем стор
-
 
   ngOnInit(): void {
     this.myBlogSyncStorage.init(); //вызов синхронизации
@@ -54,19 +51,4 @@ export class BlogsWidgetComponent implements OnInit {
   onEditBlock({id,name}){//*9 создаём onEditBlock |==> myblog.action.ts
     this.store$.dispatch(new MyblogEditBlogActions({id,name}))
   }
-
-
-
-  // @ts-ignore
-  onCreateNewBlog({name, topic, text, tegs}){
-    this.store$.dispatch(new MyblogCreateActions({name,topic,text, tegs} ));
-  }
-  onClickAdd=()=>{
-    this.onAdd=true
-
-  }
-  closeCreature(){
-    this.onAdd=false
-  }
-
 }

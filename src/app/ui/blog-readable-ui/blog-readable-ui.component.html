@@ -1,0 +1,26 @@
+<p>blog-readable-ui works!</p><h1>id</h1>
+
+<div>name |<b>{{blogInfo.id}}</b></div>
+<div>name |<b>{{blogInfo.name}}</b></div>
+<div>topic |<b>{{blogInfo.topic}}</b></div>
+<div>text |<b>{{blogInfo.text}}</b></div>
+<div>tegs |<b>{{blogInfo.tegs}}</b></div>
+<div>like_position |<b>{{blogInfo.like_position.length}}</b></div>
+<div>dataCreature |<b>{{blogInfo.dataCreature}}</b></div>
+
+<button mat-flat-button  color="primary" class="button_item"
+        (click)="onClickLike(blogInfo.id)"
+        *ngIf="!(blogInfo.like_position | lilePosution:userId)">Лайк</button>
+
+<button mat-flat-button   color="primary" class="button_item"
+        (click)="onClickDisLike(blogInfo.id)"
+        *ngIf="blogInfo.like_position | lilePosution:userId">DisLike</button>
+
+
+
+
+
+
+
+<app-comments
+              [comments]="blogInfo.comments"></app-comments>

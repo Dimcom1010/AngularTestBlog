@@ -1,0 +1,18 @@
+<h3>Регистрация</h3>
+<form class="example-form" action="#" (ngSubmit)="onRegistrat(regForm)" #regForm="ngForm" >
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Введите ваше имя</mat-label>
+    <input matInput placeholder="Логин" value="" type="text" name="name" #name="ngModel" required [(ngModel)]="regFormInit.name" >
+  </mat-form-field><br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Введите ваш логин</mat-label>
+    <input matInput placeholder="Логин" value="" type="text" name="login" #login="ngModel" required [(ngModel)]="regFormInit.login" >
+  </mat-form-field><br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Введите ваш пороль</mat-label>
+    <input matInput placeholder="пороль" value="" type="text" name="password" #password="ngModel" required [(ngModel)]="regFormInit.password" >
+  </mat-form-field><br>
+  <button   mat-flat-button  color="primary" [disabled]="!regFormInit.name || !regFormInit.login || !regFormInit.password">Зарезистрироваться</button>
+
+</form>
+<button  mat-flat-button   color="primary" (click)="onCloseAdd()">У меня уже есть профиль</button>

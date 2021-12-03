@@ -1,0 +1,9 @@
+<h1>Статистические графики</h1>
+<button mat-button [matMenuTriggerFor]="menu">Фильтровать по</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="filterCharts(nameData,likesData)">Количесву лайков</button>
+  <button mat-menu-item (click)="filterCharts(dataData,idData)">Порядку регистрации</button>
+</mat-menu>
+
+<div id="main" class="chart_style" ></div>
+

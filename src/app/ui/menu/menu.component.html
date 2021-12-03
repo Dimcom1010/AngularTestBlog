@@ -1,0 +1,24 @@
+
+<mat-toolbar color="primary" class="menu__wrapper">
+  <div class="menu__burger">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="">Главная</button>
+    <button mat-menu-item routerLink="blogs/">Блоги</button>
+    <button mat-menu-item routerLink="charts/">Статистика</button>
+    <button mat-menu-item routerLink="login/" *ngIf="!loadSelector">Войти</button>
+    <button mat-menu-item routerLink="login/" *ngIf="loadSelector" (click)="onlogOut()">Выйти</button>
+  </mat-menu>
+  </div>
+
+  <div class="menu__items">
+    <div class="menu__item" routerLink="">Главная</div>
+    <div class="menu__item" routerLink="blogs/" *ngIf="loadSelector">Блоги</div>
+    <div class="menu__item" routerLink="charts/" *ngIf="loadSelector">Статистика</div>
+    <div class="menu__item" routerLink="login/" *ngIf="!loadSelector">Войти</div>
+    <div class="menu__item" (click)="onlogOut()" *ngIf="loadSelector" >Выйти</div>
+  </div>
+</mat-toolbar>
+

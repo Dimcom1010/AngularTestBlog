@@ -1,0 +1,27 @@
+<mat-card>
+<H3>Создание нового блока</H3>
+
+<form class="example-form" action="#" (ngSubmit)="onCreateNewBlog(blogForm)" #blogForm="ngForm">
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Тема вашего блога</mat-label>
+    <input matInput placeholder="Логин" value="" type="text" name="topic" #topic="ngModel" required [(ngModel)]="formInit.topic" >
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Напишите Текст</mat-label>
+  <textarea matInput placeholder="Текст" type="text" name="text" #text="ngModel" required [(ngModel)]="formInit.text"></textarea>
+  </mat-form-field><br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Добавьте теги</mat-label>
+    <input matInput placeholder="Теги" type="text" name="tegs" #tegs="ngModel" required [(ngModel)]="formInit.tegform" >
+  </mat-form-field><br>
+
+
+  <button   mat-flat-button  color="primary" [disabled]="!formInit.topic || !formInit.text || !formInit.tegform">Создать блог</button>
+
+</form>
+
+  </mat-card>
+
+

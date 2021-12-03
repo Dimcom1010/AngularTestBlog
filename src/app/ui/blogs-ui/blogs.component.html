@@ -1,0 +1,28 @@
+<mat-card>
+<mat-form-field class="example-full-width" appearance="fill" >
+  <mat-label>Поиск по темам</mat-label>
+  <input matInput placeholder="тема" type="text" name="password" [(ngModel)]="searchStr" >
+</mat-form-field><br>
+
+<!--// компонент отрисовывает либо БЛОГ либо БЛОГ В РЕЖИМЕ РЕДАКТИРОВАНИЯ-->
+<div *ngFor="let blog of blogList | searchPipe:searchStr ">
+
+  <app-blog-display-ui *ngIf="!editIds.includes(blog.id)"
+                       [blog]="blog"
+                       [admin]="admin"
+                       (disabledLike)="onClickLike(blog.id)"
+                       (clickDisLike)="onClickDisLike(blog.id)"
+                       (deleteBlog)="onDeleteBlog(blog.id)"
+                       (onEditMode)="onEditMode(blog.id)"
+
+
+  ></app-blog-display-ui>
+
+
+  <app-blog-edit-ui *ngIf="editIds.includes(blog.id)"
+                    [blog]="blog"
+                    (edit)="onEdit($event, blog.id)"
+  ></app-blog-edit-ui>
+</div>
+<!-- *4 (edit)=приходит из blog-edit-ui и мы видем его петерь в blogs добавляем id-->
+  </mat-card>

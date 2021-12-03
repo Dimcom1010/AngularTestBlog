@@ -1,0 +1,16 @@
+<p>РЕДАКТИРОВАНИЕ</p>
+
+<form action="#" (ngSubmit)="onEdit()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Тема</mat-label>
+    <input matInput placeholder="Название темы" value="" type="text" name="password" #password="ngModel" required [(ngModel)]="name" >
+  </mat-form-field><br>
+  <button mat-flat-button   color="primary" [disabled]="!name">ok</button>
+  <button mat-flat-button   color="primary" type="button" (click)="onCancel()">Cancel</button>
+
+</form>
+
+
+
+
+

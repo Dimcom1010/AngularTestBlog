@@ -1,0 +1,80 @@
+//стили обнуления
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+
+//стили заголовков
+
+.wrapper{}
+.header{}
+.content{}
+.footer{}
+
+.wrapper {
+  position: absolute;
+  max-width: 1600px;
+  min-width: 620px;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.199);
+  transition:cubic-bezier(0.55, 0.085, 0.68, 0.53) .2s;
+}
+
+@media (max-width: 630px) {
+  .wrapper {
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    transform:none;
+  }
+}
+
+.header,
+.footer
+{
+  padding: 10px 0px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.199);
+}
+.header{
+
+
+}
+
+@media (max-width: 800px) {
+  .footer{
+    flex-direction: column;
+  }
+}
+
+.content {
+  padding: 40px;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
-import {Myblog} from "../../model/myblog";
+import {Myblog} from "../../types/myblog";
 import {select, Store} from "@ngrx/store";
 import {myblogListSelector} from "../../store/myblog.selectors";
 import {MyblogState} from "../../store/myblog.reducer";

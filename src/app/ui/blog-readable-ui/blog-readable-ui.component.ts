@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Myblog} from "../../model/myblog";
+import {Myblog} from "../../types/myblog";
 import {BlogsService} from "../../service/blogs.service";
 import {MyblogState} from "../../store/myblog.reducer";
 import {MyblogDisabledLikeActions, MyblogDisLikeActions} from "../../store/myblog.actions";

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Myblog} from "../model/myblog";
+import {Myblog} from "../types/myblog";
 
 @Pipe({
   name: 'searchPipe'

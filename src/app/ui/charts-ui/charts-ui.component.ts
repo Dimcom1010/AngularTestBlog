@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import * as echarts from 'echarts';
-import {Myblog} from "../../model/myblog";
+import {Myblog} from "../../types/myblog";
 
 @Component({
   selector: 'app-charts-ui',

@@ -1,4 +1,4 @@
-import {Login, Myblog} from "../model/myblog";
+import {Login, Myblog} from "../types/myblog";
 import {MyblogActions, myblogActionType} from "./myblog.actions";
 
 

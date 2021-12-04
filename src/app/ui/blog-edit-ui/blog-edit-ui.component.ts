@@ -8,38 +8,40 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class BlogEditUiComponent implements OnInit {
 
-  name= '';
+
   topic=''
   textBlog=''
   tags=''
 
-  @Input()  //декоратор @Input тот кто подключит этот компонент должен будет передать значения
-  blog: any; //первоначальный массив в котором хранятся блоги
-
-  @Output()// *2- с помощью Output edit будет видна наверху
+  @Input()
+  blog: any;
+  @Output()
   edit = new EventEmitter<string>()
-  @Output()// *2- с помощью Output edit будет видна наверху
+  @Output()
   onClose =  new EventEmitter<void>()
 
 
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {          // событие жизненного цикла после монтирования компонента
     this.topic = this.blog.topic;
     this.textBlog = this.blog.text;
     this.tags = this.blog.tegs;
 
   }
 
-  onEdit(){ // *1- считали изменённое имя и поместили в name
-    if (this.topic) {
-      this.edit.emit(this.topic)// *3- погружаем name в edit через emit|=>blogs.html эта комп там рисуется
+  onEdit(){                 // событие во время нажатия кнопки сохранить
+    if (this.topic && this.textBlog && this.tags) {
+      this.edit.emit(this.topic)
+
     }
   }
 
-  onCancel(){
-    this.name=this.blog.name;
+  onCancel(){             // событие во время нажатия кнопки отмена
+    this.topic = this.blog.topic;
+    this.textBlog = this.blog.text;
+    this.tags = this.blog.tegs;
     this.onClose.emit()
   }
 }

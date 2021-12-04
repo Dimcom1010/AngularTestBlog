@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogsService} from "../../service/blogs.service";
-import {Myblog} from "../../model/myblog";
+import {Myblog} from "../../types/myblog";
 
 @Component({
   selector: 'app-home-ui',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {MyblogState} from "../../store/myblog.reducer";
 import {Observable} from "rxjs";
-import {Myblog} from "../../model/myblog";
+import {Myblog} from "../../types/myblog";
 import {myblogListSelector, userIdAutorithedSelector} from "../../store/myblog.selectors";
 import {
   MyblogCreateComment,

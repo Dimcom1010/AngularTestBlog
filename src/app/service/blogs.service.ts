@@ -3,7 +3,7 @@ import {select, Store} from "@ngrx/store";
 import {MyblogState} from "../store/myblog.reducer";
 import {filter} from "rxjs";
 import {blogListFeatureSelector} from "../store/myblog.selectors";
-import {Myblog} from "../model/myblog";
+import {Myblog} from "../types/myblog";
 
 
 @Injectable({

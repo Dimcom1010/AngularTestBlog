@@ -3,7 +3,7 @@ import {select, Store} from "@ngrx/store";
 import {myblogListSelector, UserAdmin} from "../../store/myblog.selectors";
 import {MyblogState} from "../../store/myblog.reducer";
 import {Observable} from "rxjs";
-import {Myblog} from "../../model/myblog";
+import {Myblog} from "../../types/myblog";
 import {
    MyblogCreateActions,
   MyblogDeleteBlogActions,

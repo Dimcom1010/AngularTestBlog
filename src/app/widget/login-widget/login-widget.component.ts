@@ -7,7 +7,7 @@ import {MyblogState} from "../../store/myblog.reducer";
 import {MyBlogService} from "../../service/my-blog.service";
 import {myblogListSelector} from "../../store/myblog.selectors";
 import {Observable} from "rxjs";
-import {Myblog} from "../../model/myblog";
+import {Myblog} from "../../types/myblog";
 
 @Component({
   selector: 'app-login-widget',

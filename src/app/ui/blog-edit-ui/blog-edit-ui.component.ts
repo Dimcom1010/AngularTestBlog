@@ -9,6 +9,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class BlogEditUiComponent implements OnInit {
 
   name= '';
+  topic=''
+  textBlog=''
+  tags=''
 
   @Input()  //декоратор @Input тот кто подключит этот компонент должен будет передать значения
   blog: any; //первоначальный массив в котором хранятся блоги
@@ -23,12 +26,12 @@ export class BlogEditUiComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.name = this.blog.name;
+    this.topic = this.blog.topic;
   }
 
   onEdit(){ // *1- считали изменённое имя и поместили в name
-    if (this.name) {
-      this.edit.emit(this.name)// *3- погружаем name в edit через emit|=>blogs.html эта комп там рисуется
+    if (this.topic) {
+      this.edit.emit(this.topic)// *3- погружаем name в edit через emit|=>blogs.html эта комп там рисуется
     }
   }
 

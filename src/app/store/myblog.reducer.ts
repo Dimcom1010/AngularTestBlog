@@ -224,7 +224,7 @@ export const myblogReducer = (state = initialState, Action: MyblogActions) => {
         ...state,
         blogList: state.blogList.map(blog => blog.id === Action.payload.id ? {
           ...blog,
-          topic: Action.payload.name
+          topic: Action.payload.topic
         } : blog)
 
       };

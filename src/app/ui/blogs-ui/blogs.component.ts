@@ -33,7 +33,7 @@ export class BlogsComponent implements OnInit {
   deleteBlog = new EventEmitter<number>()
 
   @Output()//*6  создаём Output editBlock
-  editBlock = new EventEmitter<{ id:number ,name:string }>()
+  editBlock = new EventEmitter<{ id:number ,topic:string }>()
 
   constructor() { }
 
@@ -44,23 +44,23 @@ export class BlogsComponent implements OnInit {
     this.deleteBlog.emit(id)
   }
 
-  onClickLike=(id:number)=>{  //1-е создали функцию
-  this.disabledLike.emit(id) //13-е  disabledLike .emit передаём значение
+  onClickLike=(id:number)=>{
+  this.disabledLike.emit(id)
   }
-  onClickDisLike=(id:number)=>{  //1-е создали функцию
-    this.clickDisLike.emit(id) //13-е  disabledLike .emit передаём значение
+  onClickDisLike=(id:number)=>{
+    this.clickDisLike.emit(id)
   }
 
-  onEdit(name:string,id:number){ //*5 создаём onEdit
-    this.editBlock.emit({id,name}) //*7- передаём значения в editBlock |=>blogs-widget
+  onEdit(topic:string,id:number){  // отправка отредактированного блока
+    this.editBlock.emit({id,topic})
     this.editIds =this.editIds.filter(item=>item!==id)
   }
 
-  onClose(id:number){
+  onClose(id:number){                                   // фильтрация блоков находящихся в режиме редактирования
     this.editIds =this.editIds.filter(item=>item!==id)
   }
   onEditMode=(id:number)=>{
-    this.editIds.push(id)
+    this.editIds.push(id)   // добавлени блоков находящихся в режиме редактирования
   }
 
 

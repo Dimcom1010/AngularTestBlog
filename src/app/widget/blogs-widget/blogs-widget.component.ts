@@ -47,8 +47,9 @@ export class BlogsWidgetComponent implements OnInit {
     this.store$.dispatch(new MyblogDeleteBlogActions({id}))
   }
 
+
   // @ts-ignore
-  onEditBlock({id,name}){//*9 создаём onEditBlock |==> myblog.action.ts
-    this.store$.dispatch(new MyblogEditBlogActions({id,name}))
+  onEditBlock({id,topic}){//*9 создаём onEditBlock |==> myblog.action.ts
+    this.store$.dispatch(new MyblogEditBlogActions({id,topic}))
   }
 }

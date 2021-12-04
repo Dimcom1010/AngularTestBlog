@@ -41,7 +41,7 @@ export class MyblogDeleteBlogActions implements Action {
 
 export class MyblogEditBlogActions implements Action {// *10-е создаём экшен
   readonly type = myblogActionType.editBlog;
-  constructor(public payload:{id:number, name:string}){}   //*12 ниже регистрируем экшен и в переходим редюсер
+  constructor(public payload:{id:number, topic:string}){}   //*12 ниже регистрируем экшен и в переходим редюсер
 }
 
 export class LoginActions implements Action {

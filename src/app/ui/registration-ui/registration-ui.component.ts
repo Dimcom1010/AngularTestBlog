@@ -23,11 +23,8 @@ export class RegistrationUiComponent implements OnInit {
   ngOnInit(): void {
   }
   onRegistrat(regForm: NgForm){
-
     if (regForm.value.name &&
-
       regForm.value.login  &&
-
       regForm.value.password
 ){
 

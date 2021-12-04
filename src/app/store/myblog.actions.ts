@@ -21,7 +21,7 @@ export class BlogLoadStateActions implements Action {
 
 export class MyblogCreateActions implements Action {
   readonly type = myblogActionType.createBlog;
-  constructor(public payload:{name:string, topic:string, text:string, tegs:string[]}) {}
+  constructor(public payload:{topic:string, text:string, tegs:string[]}) {}
 }
 
 export class MyblogDisabledLikeActions implements Action {  // 8-е копируем экшен называем onDisabledLikeActions

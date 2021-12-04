@@ -15,12 +15,15 @@ export class BlogEditUiComponent implements OnInit {
 
   @Output()// *2- с помощью Output edit будет видна наверху
   edit = new EventEmitter<string>()
+  @Output()// *2- с помощью Output edit будет видна наверху
+  onClose =  new EventEmitter<void>()
+
+
 
   constructor() { }
 
   ngOnInit(): void {
     this.name = this.blog.name;
-
   }
 
   onEdit(){ // *1- считали изменённое имя и поместили в name
@@ -28,7 +31,9 @@ export class BlogEditUiComponent implements OnInit {
       this.edit.emit(this.name)// *3- погружаем name в edit через emit|=>blogs.html эта комп там рисуется
     }
   }
+
   onCancel(){
     this.name=this.blog.name;
+    this.onClose.emit()
   }
 }

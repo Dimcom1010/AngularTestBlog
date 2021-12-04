@@ -24,6 +24,7 @@
   <app-blog-edit-ui *ngIf="editIds.includes(blog.id)"
                     [blog]="blog"
                     (edit)="onEdit($event, blog.id)"
+                    (onClose)="onClose(blog.id)"
   ></app-blog-edit-ui>
 </div>
 <!-- *4 (edit)=приходит из blog-edit-ui и мы видем его петерь в blogs добавляем id-->

@@ -20,8 +20,8 @@ pageBlogInfo:Myblog={
 
 }
 
-  // urlID:number= route.parallel['id']
-  constructor(private  blogsService:BlogsService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
 

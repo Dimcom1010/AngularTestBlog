@@ -5,7 +5,6 @@ import {Observable} from "rxjs";
 import {Myblog} from "../../model/myblog";
 import {myblogListSelector, userIdAutorithedSelector} from "../../store/myblog.selectors";
 import {
-  createUserActions,
   MyblogCreateComment,
   MyblogDisabledLikeActions,
   MyblogDisLikeActions
@@ -20,6 +19,8 @@ import {
 export class BlogReadableWidgetComponent implements OnInit {
 
   userId$: Observable<number> = this.store$.pipe(select(userIdAutorithedSelector))
+  blogList$: Observable<Myblog[]> = this.store$.pipe(select(myblogListSelector))
+
 
   constructor(private store$: Store<MyblogState>,
               ) { }
@@ -27,10 +28,18 @@ export class BlogReadableWidgetComponent implements OnInit {
   ngOnInit(): void {}
 
 
+
   // @ts-ignore
   onCreateComment({comment,id}){
     this.store$.dispatch(new MyblogCreateComment({comment,id} ));
   }
 
+  onClickLike(id: { id: number }){
+    this.store$.dispatch(new MyblogDisabledLikeActions({id}))
+  }
+
+  onClickDisLike(id: { id: number }){
+    this.store$.dispatch(new MyblogDisLikeActions({id}))
+  }
 
 }

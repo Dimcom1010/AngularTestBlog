@@ -20,10 +20,10 @@ const initialState: MyblogState = {
   idUserIncrement: 2,                   // id инкримент bogs
   idIncrement: 9,                       // id инкримент users
 
-  userIdAutorithed:0,
+  userIdAutorithed:9,
   authorized: true,
   admin: true,
-  userName:"incognito",
+  userName:"TEST",
   blogList : [
     {
       id: 1,
@@ -191,7 +191,7 @@ export const myblogReducer = (state = initialState, Action: MyblogActions) => {
         ]
       };
     case  myblogActionType.clickLike: // 12 создаём новый case onDisabledLikeActions 13-в widget.ts написать диспатч
-
+      debugger
       return {
         ...state,
         blogList: state.blogList.map(blog => blog.id === Action.payload.id ?
@@ -203,6 +203,7 @@ export const myblogReducer = (state = initialState, Action: MyblogActions) => {
       };
 
     case  myblogActionType.clickDisLike:
+      debugger
       return {
         ...state,
         blogList: state.blogList.map(blog => blog.id === Action.payload.id ? {
@@ -212,6 +213,7 @@ export const myblogReducer = (state = initialState, Action: MyblogActions) => {
         } : blog)
       };
     case  myblogActionType.deleteBlog:
+
       return {
         ...state,
         blogList: state.blogList.filter(blog => blog.id !== Action.payload.id)
@@ -222,7 +224,7 @@ export const myblogReducer = (state = initialState, Action: MyblogActions) => {
         ...state,
         blogList: state.blogList.map(blog => blog.id === Action.payload.id ? {
           ...blog,
-          name: Action.payload.name
+          topic: Action.payload.name
         } : blog)
 
       };

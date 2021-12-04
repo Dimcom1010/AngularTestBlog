@@ -56,9 +56,13 @@ export class BlogsComponent implements OnInit {
     this.editIds =this.editIds.filter(item=>item!==id)
   }
 
+  onClose(id:number){
+    this.editIds =this.editIds.filter(item=>item!==id)
+  }
   onEditMode=(id:number)=>{
     this.editIds.push(id)
   }
+
 
 
 }

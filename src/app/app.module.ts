@@ -46,6 +46,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { BlogReadableWidgetComponent } from './widget/blog-readable-widget/blog-readable-widget.component';
 import { BlogNewWidgetComponent } from './widget/blog-new-widget/blog-new-widget.component';
 import { RegistrationWidgetComponent } from './widget/registration-widget/registration-widget.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 
 
@@ -81,37 +82,38 @@ import { RegistrationWidgetComponent } from './widget/registration-widget/regist
 
 
   ],
-    imports: [
-        BrowserModule,
-        MatSliderModule,
-        FormsModule,
-        ReactiveFormsModule,
+  imports: [
+    BrowserModule,
+    MatSliderModule,
+    FormsModule,
+    ReactiveFormsModule,
 
-        RouterModule.forRoot(myblogRoutes),
-        StoreModule.forRoot({}, {
-            runtimeChecks: {
-                strictStateImmutability: true,
-                strictActionImmutability: true
-            },
+    RouterModule.forRoot(myblogRoutes),
+    StoreModule.forRoot({}, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      },
 
-        }),
+    }),
 
-        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-        EffectsModule.forRoot([]),
-        StoreModule.forFeature(MYBLOG_REDUCER_NODE, myblogReducer),
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatMenuModule,
-        NgxEchartsModule,
-        MatInputModule,
-        MatListModule,
-        MatBadgeModule,
-        MatCardModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatExpansionModule
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature(MYBLOG_REDUCER_NODE, myblogReducer),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
+    NgxEchartsModule,
+    MatInputModule,
+    MatListModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatStepperModule
 
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

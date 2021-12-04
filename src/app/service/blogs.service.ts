@@ -26,7 +26,8 @@ export class BlogsService {
   key:number=0
   com: {} =[]
   constructor(private store$: Store<MyblogState>) { }
-  getIdBlog(id:number){
+
+    getIdBlog(id: number | undefined){
     this.store$.pipe(
       select(blogListFeatureSelector),
       filter(state=>!!state)

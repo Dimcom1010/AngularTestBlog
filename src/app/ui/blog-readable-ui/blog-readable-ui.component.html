@@ -10,11 +10,11 @@
 
 <button mat-flat-button  color="primary" class="button_item"
         (click)="onClickLike(blogInfo.id)"
-        *ngIf="!(blogInfo.like_position | lilePosution:userId)">Лайк</button>
+        >Лайк</button>
 
 <button mat-flat-button   color="primary" class="button_item"
         (click)="onClickDisLike(blogInfo.id)"
-        *ngIf="blogInfo.like_position | lilePosution:userId">DisLike</button>
+        >DisLike</button>
 
 <form class="example-form" action="#" (ngSubmit)="onComment(commentForm,blogInfo.id)" #commentForm="ngForm" >
   <mat-form-field class="example-full-width" appearance="fill">
@@ -28,3 +28,5 @@
 
 <app-comments
               [comments]="blogInfo.comments"></app-comments>
+<!--*ngIf="!(blogInfo.like_position | lilePosution:userId)"-->
+<!--*ngIf="blogInfo.like_position | lilePosution:userId"-->

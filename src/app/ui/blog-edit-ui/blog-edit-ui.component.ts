@@ -27,6 +27,9 @@ export class BlogEditUiComponent implements OnInit {
 
   ngOnInit(): void {
     this.topic = this.blog.topic;
+    this.textBlog = this.blog.text;
+    this.tags = this.blog.tegs;
+
   }
 
   onEdit(){ // *1- считали изменённое имя и поместили в name

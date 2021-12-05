@@ -17,7 +17,7 @@ export interface MyblogState {// хранилище данных блогов
 }
 
 const initialState: MyblogState = {
-  idUserIncrement: 2,                   // id инкримент bogs
+  idUserIncrement: 4,                   // id инкримент bogs
   idIncrement: 9,                       // id инкримент users
 
   userIdAutorithed:9,
@@ -144,7 +144,7 @@ const initialState: MyblogState = {
   ],
   loginState: [
     {
-      id: 0,
+      id: 1,
       login: "Admin",
       name: "Admin",
       password: "Admin",
@@ -152,10 +152,18 @@ const initialState: MyblogState = {
       dataCreatureUser: new Date(2021,7,10,12,32,54).toDateString()
     },
     {
-      id: 1,
+      id: 2,
       login: "Dima",
       name: "Dima",
       password: "Dima",
+      admin:false,
+      dataCreatureUser: new Date(2021,7,12,16,14,54).toDateString()
+    },
+    {
+      id: 3,
+      login: "Alexander",
+      name: "Alexander",
+      password: "Alexander",
       admin:false,
       dataCreatureUser: new Date(2021,7,12,16,14,54).toDateString()
     }
@@ -182,7 +190,7 @@ export const myblogReducer = (state = initialState, Action: MyblogActions) => {
             text: Action.payload.text,
             tegs:Action.payload.tegs,
             like_position: [],
-            dataCreature: new Date().toLocaleTimeString(),
+            dataCreature: new Date().toDateString(),
             comments:[]
 
           }

@@ -3,10 +3,13 @@
 <mat-list role="list" [routerLink]="['/blogs',blog.id]" class="cursor_point">
 
 
-  <mat-list-item role="listitem">тема:   {{blog.topic}}</mat-list-item>
-  <mat-list-item role="listitem">Имя автора:   {{blog.name}} </mat-list-item>
-  <mat-list-item role="listitem">Время создания:    {{blog.dataCreature}}</mat-list-item>
-  <mat-list-item role="listitem">Количество лайков: {{blog.like_position| numberInArray}}</mat-list-item>
+  <mat-list-item role="listitem"><b>Тема:</b>
+
+    <span matBadge="{{likes.length}}" matBadgeOverlap="false">{{blog.topic}}</span>
+  </mat-list-item>
+  <mat-list-item role="listitem"><b>Имя автора:</b>   {{blog.name}} </mat-list-item>
+  <mat-list-item role="listitem"><b>Дата публикации: </b>   {{blog.dataCreature | date:'MM/dd/yyyy'}}</mat-list-item>
+  <mat-list-item role="listitem"><b>Количество лайков:</b> {{blog.like_position| numberInArray}}</mat-list-item>
 
 </mat-list>
 
@@ -18,4 +21,6 @@
         (click)="onEditBlog()"
         *ngIf="admin">Редактировать блог</button>
 <br>
+  <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
 </mat-card>
+

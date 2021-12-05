@@ -1,18 +1,30 @@
 
 <h3>Вход</h3>
 <form class="example-form" action="#" (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm" >
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Введите ваш логин</mat-label>
-    <input matInput placeholder="Логин" value="" type="text" name="login" #login="ngModel" required [(ngModel)]="loginFormInit.login" >
+    <input matInput placeholder="pat@example.com" value="" type="text" name="login" #login="ngModel" required [(ngModel)]="loginFormInit.login" >
   </mat-form-field><br>
+
+<!--  <mat-form-field class="example-full-width" appearance="fill">-->
+
+<!--    <mat-label>Введите ваш пороль</mat-label>-->
+<!--    <input matInput placeholder="******" value="" type="text" name="password" #password="ngModel" required [(ngModel)]="loginFormInit.password" >-->
+<!--  </mat-form-field><br>-->
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Введите ваш пороль</mat-label>
-    <input matInput placeholder="пороль" value="" type="text" name="password" #password="ngModel" required [(ngModel)]="loginFormInit.password" >
-  </mat-form-field><br>
+    <input matInput [type]="hide ? 'password' : 'text'" type="text" name="password" #password="ngModel" required [(ngModel)]="loginFormInit.password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
   <button  ng-disabled="login.$invalid || password.$invalid " mat-flat-button   color="primary" [disabled]="!loginFormInit.login || !loginFormInit.password">Войти</button>
  </form>
-
-<button   mat-flat-button   color="primary" (click)="onAdd()"  routerLink="/registration">Создать профиль</button>
 <br>
-
-
+<div class="button__group">
+<button   mat-flat-button   color="primary" (click)="onAdd()"  routerLink="/registration">Создать профиль</button>
+<button   mat-flat-button   color="primary" (click)="onAdd()"  routerLink="/home">Вернуться на главную</button>
+</div>

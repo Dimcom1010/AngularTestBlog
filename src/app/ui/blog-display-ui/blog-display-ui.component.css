@@ -7,3 +7,6 @@ font-weight: lighter;
 .cursor_point{
   cursor: pointer;
 }
+b{
+  margin: 0 15px 0 0;
+}

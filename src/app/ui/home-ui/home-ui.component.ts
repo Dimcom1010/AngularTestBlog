@@ -9,17 +9,8 @@ import {Myblog} from "../../types/myblog";
 })
 
 export class HomeUiComponent implements OnInit {
-pageBlogInfo:Myblog={
-  id: 0,
-  name: "Пустой",
-  topic: "Пустой",
-  text: "Пустой",
-  tegs:["Пустой","Пустой", "Пустой","Пустой"],
-  like_position: [],
-  dataCreature: new Date().toDateString()
 
-}
-
+  descriptions:boolean=true
 
   constructor() { }
 
@@ -27,6 +18,8 @@ pageBlogInfo:Myblog={
 
   }
 
-
+  onClickDescriptions(){
+    this.descriptions=!this.descriptions
+  }
 
 }

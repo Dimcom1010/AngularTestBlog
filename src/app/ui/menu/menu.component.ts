@@ -8,8 +8,12 @@ import {Router} from "@angular/router";
   styleUrls: ['./menu.component.css']
 })
 
+
+
 export class MenuComponent implements OnInit {
+
   position:boolean = false
+
   @Input()
   loadSelector:any
   @Output()
@@ -26,4 +30,5 @@ export class MenuComponent implements OnInit {
     this.logOut.emit()
     this.router.navigateByUrl('/login')
   }
+
 }

@@ -1,4 +1,14 @@
 
+<div class="blog_readable__wrapper">
+  <div class="blog_readable__row">
+    <div class="blog_readable__left_column"></div>
+    <div class="blog_readable__right_column"></div>
+  </div>
+
+</div>
+
+
+
 <div>name |<b>{{blogInfo.id}}</b></div>
 <div>name |<b>{{blogInfo.name}}</b></div>
 <div>topic |<b>{{blogInfo.topic}}</b></div>
@@ -8,11 +18,11 @@
 <div>dataCreature |<b>{{blogInfo.dataCreature}}</b></div>
 
 <button mat-flat-button  color="primary" class="button_item"
-        (click)="onClickLike(blogInfo.id)"
+        (click)="onClickLike(blogInfo.id)" *ngIf="!(blogInfo.like_position | lilePosution:userId)"
         >Лайк</button>
 
 <button mat-flat-button   color="primary" class="button_item"
-        (click)="onClickDisLike(blogInfo.id)"
+        (click)="onClickDisLike(blogInfo.id)" *ngIf="blogInfo.like_position | lilePosution:userId"
         >DisLike</button>
 
 <form class="example-form" action="#" (ngSubmit)="onComment(commentForm,blogInfo.id)" #commentForm="ngForm" >
@@ -22,8 +32,6 @@
   </mat-form-field><br>
   <button  ng-disabled="login.$invalid" mat-flat-button   color="primary" [disabled]="!comment1">Сохранить</button>
 </form>
-
-
 
 <app-comments
               [comments]="blogInfo.comments"></app-comments>

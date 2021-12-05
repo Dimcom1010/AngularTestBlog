@@ -12,7 +12,9 @@ export class BlogDisplayUiComponent implements OnInit {
   blog:any;
   @Input()
   admin:any;
-
+  likes:number[]=[]
+  dataBlog:any
+  topic:string| undefined
 
   @Output()//2-е создали @Output   !!
   disabledLike = new EventEmitter<void>()  //3-е создали disabledLike (указиваем тип в <type>) |==> в wudget.html
@@ -31,6 +33,9 @@ export class BlogDisplayUiComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.likes=this.blog.like_position
+    this.dataBlog=this.blog.dataCreatureUser
+    this.topic=this.blog.topic
   }
 
 

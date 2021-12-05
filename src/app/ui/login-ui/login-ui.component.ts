@@ -12,7 +12,7 @@ export class LoginUiComponent implements OnInit {
     login : '',
     password : '',
   }
-
+  hide = true;
   @Output()
   onlogIn = new EventEmitter<boolean>()
   @Output()

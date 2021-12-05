@@ -1,30 +1,34 @@
 <p>РЕДАКТИРОВАНИЕ</p>
 
 <form action="#" (ngSubmit)="onEdit()">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Тема</mat-label>
-    <input matInput placeholder="Название темы" value="" type="text" name="topic"  [(ngModel)]="topic" >
-  </mat-form-field>
+  <div class="input_group">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Тема</mat-label>
+      <input  matInput placeholder="Название темы" value="" type="text" name="topic"  [(ngModel)]="topic" >
+    </mat-form-field>
+    <button mat-flat-button   color="primary" type="button" (click)="onReturnTopic()">Отмена</button>
+  </div>
 
-  <button mat-flat-button   color="primary" type="button" (click)="onReturnTopic()">Отмена</button>
-  <br>
+  <div class="input_group">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Текст</mat-label>
+      <textarea matInput placeholder="Название темы" value="" type="text" name="textBlog" [(ngModel)]="textBlog" ></textarea>
+    </mat-form-field>
+    <button mat-flat-button   color="primary" type="button" (click)="onReturnText()">Отмена</button>
+  </div>
 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Текст</mat-label>
-    <textarea matInput placeholder="Название темы" value="" type="text" name="textBlog" [(ngModel)]="textBlog" ></textarea>
-  </mat-form-field>
-  <button mat-flat-button   color="primary" type="button" (click)="onReturnText()">Отмена</button>
+  <div class="input_group">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Теги</mat-label>
+      <textarea matInput placeholder="Название темы" value="" type="text" name="tags" [(ngModel)]="tags" ></textarea>
+    </mat-form-field>
+    <button mat-flat-button   color="primary" type="button" (click)="onReturnTags()">Отмена</button>
+  </div>
 
-  <br>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Теги</mat-label>
-    <textarea matInput placeholder="Название темы" value="" type="text" name="tags" [(ngModel)]="tags" ></textarea>
-  </mat-form-field>
-  <button mat-flat-button   color="primary" type="button" (click)="onReturnTags()">Отмена</button>
-  <br>
-  <button mat-flat-button   color="primary" [disabled]="!topic">Сохранить</button>
-  <button mat-flat-button   color="primary" type="button" (click)="onCancel()">Оставить без изменения</button>
-
+  <div class="input_group">
+    <button mat-flat-button   color="primary" [disabled]="!topic">Сохранить</button>
+    <button mat-flat-button   color="primary" type="button" (click)="onCancel()">Оставить без изменения</button>
+  </div>
 </form>
 
 

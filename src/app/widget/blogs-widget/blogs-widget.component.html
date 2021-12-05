@@ -3,11 +3,15 @@
            [admin]="admin$ | async"
 
            (deleteBlog)="onDeleteBlog($event)"
+
            (disabledLike)="onDisabledLike($event)"
-
-           (editBlock)="onEditBlock($event)"
-
            (clickDisLike)="onClickDisLike($event)"
+
+           (editBlockTopic)="onEditBlockTopic($event)"
+           (editBlockText)="onEditBlockText($event)"
+           (editBlockTags)="onEditBlockTags($event)"
+
+
 
 
 ></app-blogs>

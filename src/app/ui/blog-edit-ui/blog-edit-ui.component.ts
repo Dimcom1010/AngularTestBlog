@@ -16,7 +16,13 @@ export class BlogEditUiComponent implements OnInit {
   @Input()
   blog: any;
   @Output()
-  edit = new EventEmitter<string>()
+  edit = new EventEmitter<void>()
+  @Output()
+  editTopic = new EventEmitter<string>()
+  @Output()
+  editText = new EventEmitter<string>()
+  @Output()
+  editTags = new EventEmitter<string>()
   @Output()
   onClose =  new EventEmitter<void>()
 
@@ -33,7 +39,10 @@ export class BlogEditUiComponent implements OnInit {
 
   onEdit(){                 // событие во время нажатия кнопки сохранить
     if (this.topic && this.textBlog && this.tags) {
-      this.edit.emit(this.topic)
+      this.edit.emit()
+      this.editTopic.emit(this.topic)
+      this.editText.emit(this.textBlog)
+      this.editTags.emit(this.tags)
 
     }
   }
@@ -44,4 +53,14 @@ export class BlogEditUiComponent implements OnInit {
     this.tags = this.blog.tegs;
     this.onClose.emit()
   }
+  onReturnTopic(){
+    this.topic = this.blog.topic;
+  }
+  onReturnText(){
+    this.textBlog = this.blog.text;
+  }
+  onReturnTags(){
+    this.tags = this.blog.tegs;
+  }
+
 }

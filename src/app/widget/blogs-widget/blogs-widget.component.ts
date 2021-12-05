@@ -5,11 +5,13 @@ import {MyblogState} from "../../store/myblog.reducer";
 import {Observable} from "rxjs";
 import {Myblog} from "../../types/myblog";
 import {
-   MyblogCreateActions,
+
   MyblogDeleteBlogActions,
   MyblogDisabledLikeActions,
   MyblogDisLikeActions,
-  MyblogEditBlogActions
+  MyblogEditBlogTagsActions,
+  MyblogEditBlogTextActions,
+  MyblogEditBlogTopicActions
 } from "../../store/myblog.actions";
 import {MyBlogService} from "../../service/my-blog.service";
 
@@ -48,8 +50,19 @@ export class BlogsWidgetComponent implements OnInit {
   }
 
 
+
   // @ts-ignore
-  onEditBlock({id,topic}){//*9 создаём onEditBlock |==> myblog.action.ts
-    this.store$.dispatch(new MyblogEditBlogActions({id,topic}))
+  onEditBlockTopic({topic,id}){
+    this.store$.dispatch(new MyblogEditBlogTopicActions({topic,id}))
+  }
+
+  // @ts-ignore
+  onEditBlockText({text,id}){
+    this.store$.dispatch(new MyblogEditBlogTextActions({text,id}))
+  }
+
+  // @ts-ignore
+  onEditBlockTags({tags,id}){
+    this.store$.dispatch(new MyblogEditBlogTagsActions({tags,id}))
   }
 }

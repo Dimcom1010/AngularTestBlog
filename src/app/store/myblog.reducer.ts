@@ -217,15 +217,33 @@ export const myblogReducer = (state = initialState, Action: MyblogActions) => {
         blogList: state.blogList.filter(blog => blog.id !== Action.payload.id)
 
       };
-    case  myblogActionType.editBlog:
+    case  myblogActionType.editBlogTopic:
       return {
         ...state,
         blogList: state.blogList.map(blog => blog.id === Action.payload.id ? {
           ...blog,
           topic: Action.payload.topic
         } : blog)
-
       };
+    case  myblogActionType.editBlogText:
+      return {
+        ...state,
+        blogList: state.blogList.map(blog => blog.id === Action.payload.id ? {
+          ...blog,
+          text: Action.payload.text
+        } : blog)
+      };
+    case  myblogActionType.editBlogTags:
+      return {
+        ...state,
+        blogList: state.blogList.map(blog => blog.id === Action.payload.id ? {
+          ...blog,
+          tegs: Action.payload.tags
+        } : blog)
+      };
+
+
+
     case  myblogActionType.login:
       return {
         ...state,

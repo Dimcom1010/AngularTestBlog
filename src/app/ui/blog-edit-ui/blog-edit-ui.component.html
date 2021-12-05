@@ -4,17 +4,26 @@
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Тема</mat-label>
     <input matInput placeholder="Название темы" value="" type="text" name="topic"  [(ngModel)]="topic" >
-  </mat-form-field><br>
+  </mat-form-field>
+
+  <button mat-flat-button   color="primary" type="button" (click)="onReturnTopic()">Отмена</button>
+  <br>
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Текст</mat-label>
     <textarea matInput placeholder="Название темы" value="" type="text" name="textBlog" [(ngModel)]="textBlog" ></textarea>
-  </mat-form-field><br>
+  </mat-form-field>
+  <button mat-flat-button   color="primary" type="button" (click)="onReturnText()">Отмена</button>
+
+  <br>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Теги</mat-label>
     <textarea matInput placeholder="Название темы" value="" type="text" name="tags" [(ngModel)]="tags" ></textarea>
-  </mat-form-field><br>
-  <button mat-flat-button   color="primary" [disabled]="!topic">ok</button>
-  <button mat-flat-button   color="primary" type="button" (click)="onCancel()">Cancel</button>
+  </mat-form-field>
+  <button mat-flat-button   color="primary" type="button" (click)="onReturnTags()">Отмена</button>
+  <br>
+  <button mat-flat-button   color="primary" [disabled]="!topic">Сохранить</button>
+  <button mat-flat-button   color="primary" type="button" (click)="onCancel()">Оставить без изменения</button>
 
 </form>
 

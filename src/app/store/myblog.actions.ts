@@ -7,7 +7,9 @@ export enum myblogActionType  {
   clickLike = "[MYBLOG]  clickLike Myblog item" ,// 10-е создаем имя экшена clickLike
   clickDisLike = "[MYBLOG]  clickDisLike Myblog item" ,
   deleteBlog= "[MYBLOG]  delete blog Myblog item",
-  editBlog="[MYBLOG]  edit blog Myblog item", //*11 создаем имя экшена
+  editBlogTopic="[MYBLOG]  edit blog Myblog item Topic",
+  editBlogText="[MYBLOG]  edit blog Myblog item Text",
+  editBlogTags="[MYBLOG]  edit blog Myblog item Tags",
   login= "[MYBLOG]  is user login",
   logOut= "[MYBLOG]  is user logOut",
   createUser= "[MYBLOG] create new user",
@@ -39,10 +41,21 @@ export class MyblogDeleteBlogActions implements Action {
   constructor(public payload:{id:number}) {}
 }
 
-export class MyblogEditBlogActions implements Action {// *10-е создаём экшен
-  readonly type = myblogActionType.editBlog;
-  constructor(public payload:{id:number, topic:string}){}   //*12 ниже регистрируем экшен и в переходим редюсер
+
+export class MyblogEditBlogTopicActions implements Action {
+  readonly type = myblogActionType.editBlogTopic;
+  constructor(public payload:{ topic:string,id:number}){}
 }
+export class MyblogEditBlogTextActions implements Action {
+  readonly type = myblogActionType.editBlogText;
+  constructor(public payload:{ text:string,id:number}){}
+}
+export class MyblogEditBlogTagsActions implements Action {
+  readonly type = myblogActionType.editBlogTags;
+  constructor(public payload:{ tags:string,id:number}){}
+}
+
+
 
 export class LoginActions implements Action {
   readonly type = myblogActionType.login;
@@ -68,7 +81,9 @@ export type MyblogActions =
   MyblogCreateActions |
   MyblogDisabledLikeActions |
   MyblogDeleteBlogActions|
-  MyblogEditBlogActions|
+  MyblogEditBlogTopicActions|
+  MyblogEditBlogTextActions|
+  MyblogEditBlogTagsActions|
   MyblogDisLikeActions|
   LoginActions|
   LogOutActions|

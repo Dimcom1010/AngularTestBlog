@@ -28,12 +28,17 @@ export class BlogsComponent implements OnInit {
   @Output()
   clickDisLike = new EventEmitter<number>()
 
-
   @Output()
   deleteBlog = new EventEmitter<number>()
 
-  @Output()//*6  создаём Output editBlock
-  editBlock = new EventEmitter<{ id:number ,topic:string }>()
+  @Output()
+  editBlockTopic = new EventEmitter<{ topic:string,id:number}>()
+
+  @Output()
+  editBlockText = new EventEmitter<{ text:string,id:number }>()
+
+  @Output()
+  editBlockTags = new EventEmitter<{ tags:string,id:number }>()
 
   constructor() { }
 
@@ -51,10 +56,22 @@ export class BlogsComponent implements OnInit {
     this.clickDisLike.emit(id)
   }
 
-  onEdit(topic:string,id:number){  // отправка отредактированного блока
-    this.editBlock.emit({id,topic})
+  onEdit(id:number){  // отправка отредактированного блока
     this.editIds =this.editIds.filter(item=>item!==id)
+
+  }  onEditTopic(topic:string,id:number){  // отправка отредактированного темы
+    this.editBlockTopic.emit({topic,id})
+
   }
+  onEditText(text:string,id:number){  // отправка отредактированного текста
+    this.editBlockText.emit({text,id})
+
+  }
+  onEditTags(tags:string,id:number){  // отправка отредактированных тегов
+    this.editBlockTags.emit({tags,id})
+
+  }
+
 
   onClose(id:number){                                   // фильтрация блоков находящихся в режиме редактирования
     this.editIds =this.editIds.filter(item=>item!==id)

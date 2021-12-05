@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component,  Input, OnInit, } from '@angular/core';
 import * as echarts from 'echarts';
 import {Myblog} from "../../types/myblog";
 

@@ -160,9 +160,7 @@ const initialState: MyblogState = {
       dataCreatureUser: new Date(2021,7,12,16,14,54).toDateString()
     }
   ]
-
 }
-
 
 export const myblogReducer = (state = initialState, Action: MyblogActions) => {
   switch (Action.type) {

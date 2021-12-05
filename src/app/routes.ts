@@ -7,10 +7,10 @@ import {AuthGuard} from "./guard/auth.guard";
 
 import {HomeWidgetComponent} from "./widget/home-widget/home-widget.component";
 import {Page404Component} from "./ui/page404/page404.component";
-import {BlogReadableUiComponent} from "./ui/blog-readable-ui/blog-readable-ui.component";
 import {BlogReadableWidgetComponent} from "./widget/blog-readable-widget/blog-readable-widget.component";
 import {BlogNewComponent} from "./ui/blog-new-ui/blog-new.component";
 import {RegistrationWidgetComponent} from "./widget/registration-widget/registration-widget.component";
+import {ChartsMWidgetComponent} from "./models/charts/widgit/charts-m-widget/charts-m-widget.component";
 
 
 export const myblogRoutes: Routes =[
@@ -52,6 +52,10 @@ export const myblogRoutes: Routes =[
     path: 'new',
     component: BlogNewComponent,
     canActivate:[AuthGuard]
+  },
+  {
+    path: "module",
+    component:ChartsMWidgetComponent
   },
     {
       path: '**',

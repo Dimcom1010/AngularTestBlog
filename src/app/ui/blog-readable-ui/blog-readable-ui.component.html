@@ -24,22 +24,21 @@
   <div class="blog_readable__row">
     <div class="blog_readable__left_column"> <u> Понравилось</u></div>
     <div class="blog_readable__right_column">{{blogInfo.like_position.length}}</div>
-    <button mat-icon-button color="accent" (click)="onClickLike(blogInfo.id)" *ngIf="!(blogInfo.like_position | lilePosution:userId)">
+    <button mat-icon-button  (click)="onClickLike(blogInfo.id)" *ngIf="!(blogInfo.like_position | lilePosution:userId)">
       <mat-icon>favorite</mat-icon>
     </button>
-    <button mat-icon-button  (click)="onClickDisLike(blogInfo.id)" *ngIf="blogInfo.like_position | lilePosution:userId">
+    <button mat-icon-button color="accent" (click)="onClickDisLike(blogInfo.id)" *ngIf="blogInfo.like_position | lilePosution:userId">
       <mat-icon>favorite</mat-icon>
     </button>
   </div>
 </div>
-
 
 <form class="example-form" action="#" (ngSubmit)="onComment(commentForm,blogInfo.id)" #commentForm="ngForm" >
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Оставить комментарий</mat-label>
     <textarea matInput placeholder="Введите текст" value="" type="text" name="comment" #comment="ngModel"  [(ngModel)]="comment1" ></textarea>
   </mat-form-field><br>
-  <button  ng-disabled="login.$invalid" mat-flat-button   color="primary" [disabled]="!comment1">Сохранить</button>
+  <button  ng-disabled="login.$invalid" mat-flat-button   color="primary" [disabled]="!comment1">Отправить</button>
 </form>
 
 <app-comments

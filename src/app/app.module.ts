@@ -57,6 +57,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { DescriptionsUiComponent } from './ui/descriptions-ui/descriptions-ui.component';
 import { DescriptionsWidgetComponent } from './widget/descriptions-widget/descriptions-widget.component';
 import { SearchTagPipe } from './pipes/search-tag.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 
 
@@ -92,6 +93,7 @@ import { SearchTagPipe } from './pipes/search-tag.pipe';
     DescriptionsUiComponent,
     DescriptionsWidgetComponent,
     SearchTagPipe,
+    ReversePipe,
 
 
 

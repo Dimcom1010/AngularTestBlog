@@ -1,33 +1,42 @@
 
 <div class="blog_readable__wrapper">
   <div class="blog_readable__row">
-    <div class="blog_readable__left_column"></div>
-    <div class="blog_readable__right_column"></div>
+    <div class="blog_readable__left_column"><u> Автор</u></div>
+    <div class="blog_readable__right_column">{{blogInfo.name}}</div>
+  </div>
+  <div class="blog_readable__row">
+    <div class="blog_readable__left_column"> <u> Тема</u></div>
+    <div class="blog_readable__right_column">{{blogInfo.topic}}</div>
+  </div>
+  <div class="blog_readable__row">
+    <div class="blog_readable__left_column"> <u> Содержание</u></div>
+    <div class="blog_readable__right_column">{{blogInfo.text}}</div>
   </div>
 
+  <div class="blog_readable__row">
+    <div class="blog_readable__left_column"><u>  Теги </u></div>
+    <div class="blog_readable__right_column">{{blogInfo.tegs}}</div>
+  </div>
+  <div class="blog_readable__row">
+    <div class="blog_readable__left_column"> <u> Дата публикачии </u></div>
+    <div class="blog_readable__right_column">{{blogInfo.dataCreature}}</div>
+  </div>
+  <div class="blog_readable__row">
+    <div class="blog_readable__left_column"> <u> Понравилось</u></div>
+    <div class="blog_readable__right_column">{{blogInfo.like_position.length}}</div>
+    <button mat-icon-button color="accent" (click)="onClickLike(blogInfo.id)" *ngIf="!(blogInfo.like_position | lilePosution:userId)">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button  (click)="onClickDisLike(blogInfo.id)" *ngIf="blogInfo.like_position | lilePosution:userId">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
 </div>
 
 
-
-<div>name |<b>{{blogInfo.id}}</b></div>
-<div>name |<b>{{blogInfo.name}}</b></div>
-<div>topic |<b>{{blogInfo.topic}}</b></div>
-<div>text |<b>{{blogInfo.text}}</b></div>
-<div>tegs |<b>{{blogInfo.tegs}}</b></div>
-<div>like_position |<b>{{blogInfo.like_position.length}}</b></div>
-<div>dataCreature |<b>{{blogInfo.dataCreature}}</b></div>
-
-<button mat-flat-button  color="primary" class="button_item"
-        (click)="onClickLike(blogInfo.id)" *ngIf="!(blogInfo.like_position | lilePosution:userId)"
-        >Лайк</button>
-
-<button mat-flat-button   color="primary" class="button_item"
-        (click)="onClickDisLike(blogInfo.id)" *ngIf="blogInfo.like_position | lilePosution:userId"
-        >DisLike</button>
-
 <form class="example-form" action="#" (ngSubmit)="onComment(commentForm,blogInfo.id)" #commentForm="ngForm" >
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Ваш коментарий</mat-label>
+    <mat-label>Оставить комментарий</mat-label>
     <textarea matInput placeholder="Введите текст" value="" type="text" name="comment" #comment="ngModel"  [(ngModel)]="comment1" ></textarea>
   </mat-form-field><br>
   <button  ng-disabled="login.$invalid" mat-flat-button   color="primary" [disabled]="!comment1">Сохранить</button>

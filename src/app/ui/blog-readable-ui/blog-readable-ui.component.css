@@ -1,7 +1,18 @@
 .blog_readable__wrapper{
-
+  margin: 25px 0 0 0;
 }
-
+.blog_readable__row{
+  display: flex;
+  margin: 10px 0;
+}
+.blog_readable__left_column{
+  display: flex;
+  width: 20%;
+}
+.blog_readable__right_column{
+  display: flex;
+  width: 80%;
+}
 
 
 .example-full-width{

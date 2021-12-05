@@ -21,6 +21,10 @@ export const userIdAutorithedSelector = createSelector(
   blogListFeatureSelector,
   state=> state.userIdAutorithed,
 )
+export const descriptionsDataSelector = createSelector(
+  blogListFeatureSelector,
+  state=> state.descriptionsData,
+)
 
 
 

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {BlogsService} from "../../service/blogs.service";
-import {Myblog} from "../../types/myblog";
+import {Component, Input, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-home-ui',
@@ -10,16 +9,12 @@ import {Myblog} from "../../types/myblog";
 
 export class HomeUiComponent implements OnInit {
 
-  descriptions:boolean=true
-
   constructor() { }
 
   ngOnInit(): void {
 
   }
 
-  onClickDescriptions(){
-    this.descriptions=!this.descriptions
-  }
+
 
 }

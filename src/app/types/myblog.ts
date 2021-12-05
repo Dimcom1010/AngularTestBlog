@@ -29,4 +29,8 @@ export interface Coment{
   usersComent?:string;
   text?:string;
 }
+export interface DescriptionsDataType{
+  text:string;
+  img:number;
+}
 

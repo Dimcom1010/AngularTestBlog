@@ -1,4 +1,4 @@
-import {Login, Myblog} from "../types/myblog";
+import {DescriptionsDataType, Login, Myblog} from "../types/myblog";
 import {MyblogActions, myblogActionType} from "./myblog.actions";
 
 
@@ -13,6 +13,7 @@ export interface MyblogState {// хранилище данных блогов
   blogList: Myblog[];
   loginState: Login[];
   userName:string;
+  descriptionsData:DescriptionsDataType[]
 
 }
 
@@ -167,6 +168,90 @@ const initialState: MyblogState = {
       admin:false,
       dataCreatureUser: new Date(2021,7,12,16,14,54).toDateString()
     }
+  ],
+  descriptionsData:[
+    {
+    text:"Добро пожаловать Перейдите для авторизации нажмите на \"Войти\"",
+    img:1,
+  },
+    {
+      text:"geyrn 2",
+      img:2,
+    },
+    {
+      text:"geyrn 2",
+      img:3,
+    },
+    {
+      text:"geyrn 2",
+      img:4,
+    },
+    {
+      text:"geyrn 2",
+      img:5,
+    },
+    {
+      text:"geyrn 2",
+      img:6,
+    },
+    {
+      text:"geyrn 2",
+      img:7,
+    },
+    {
+      text:"geyrn 2",
+      img:8,
+    },
+    {
+      text:"geyrn 2",
+      img:9,
+    },
+    {
+      text:"geyrn 2",
+      img:10,
+    },
+    {
+      text:"geyrn 2",
+      img:11,
+    },
+    {
+      text:"geyrn 2",
+      img:12,
+    },
+    {
+      text:"geyrn 2",
+      img:13,
+    },
+    {
+      text:"geyrn 2",
+      img:14,
+    },
+    {
+      text:"geyrn 2",
+      img:15,
+    },
+    {
+      text:"geyrn 2",
+      img:16,
+    },
+    {
+      text:"geyrn 2",
+      img:17,
+    },
+    {
+      text:"geyrn 2",
+      img:18,
+    },
+    {
+      text:"geyrn 2",
+      img:19,
+    },
+    {
+      text:"geyrn 2",
+      img:20,
+    },
+
+
   ]
 }
 

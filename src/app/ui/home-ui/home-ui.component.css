@@ -12,21 +12,3 @@
   display: flex;
   justify-content: center;
 }
-.button_conteiner button{
-  display: flex;
-}
-.descriptions_row{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.descriptions_left_column{
-  display: flex;
-  width: 40%;
-  background-color: aqua;
-}
-.descriptions_right_column{
-  display: flex;
-  width: 60%;
-  background-color: azure;
-}

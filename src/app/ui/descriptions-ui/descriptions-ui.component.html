@@ -1,0 +1,13 @@
+<h2>Тут вы можите ознакомиться с функционалом приложения</h2>
+<div class="descriptions__conteiner" *ngFor="let description of descriptionsData">
+
+  <div class="descriptions_row">
+    <div class="descriptions_left_column">
+      {{description.text}}
+    </div>
+    <div class="descriptions_right_column">
+      <img src="../../../assets/descriptions/descriptions_{{description.img}}.PNG" alt="">
+    </div>
+  </div>
+
+</div>

@@ -1,11 +1,11 @@
-<h2>Коментарии</h2>
+<h2>Комментарии</h2>
 <div *ngFor="let comment of comments">
 <mat-accordion>
 
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        от пользователя: {{comment.usersComent}}
+        <u>от пользователя:</u> <div class="margen">{{comment.usersComent}}</div>
       </mat-panel-title>
       <mat-panel-description>
         {{comment.data}}

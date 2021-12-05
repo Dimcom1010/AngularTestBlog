@@ -54,6 +54,8 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatTabsModule} from "@angular/material/tabs";
 import { FooterUiComponent } from './ui/footer-ui/footer-ui.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { DescriptionsUiComponent } from './ui/descriptions-ui/descriptions-ui.component';
+import { DescriptionsWidgetComponent } from './widget/descriptions-widget/descriptions-widget.component';
 
 
 
@@ -86,6 +88,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     BlogNewWidgetComponent,
     RegistrationWidgetComponent,
     FooterUiComponent,
+    DescriptionsUiComponent,
+    DescriptionsWidgetComponent,
 
 
 

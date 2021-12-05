@@ -1,0 +1,22 @@
+.button_conteiner button{
+  display: flex;
+}
+.descriptions_row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.descriptions_left_column{
+  display: flex;
+  width: 40%;
+
+}
+.descriptions_right_column{
+  display: flex;
+  width: 60%;
+
+}
+.descriptions_right_column img{
+  display: flex;
+  width: 100%;
+}

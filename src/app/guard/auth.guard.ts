@@ -4,7 +4,7 @@ import {filter, map, Observable} from 'rxjs';
 import {select, Store} from "@ngrx/store";
 import {MyblogState} from "../store/myblog.reducer";
 
-import {blogListFeatureSelector, loadSelector} from "../store/myblog.selectors";
+import {blogListFeatureSelector} from "../store/myblog.selectors";
 
 
 @Injectable({
@@ -23,8 +23,7 @@ export class AuthGuard implements CanActivate {
 
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // console.log("route " + route.url)
-    // console.log("state " + state.url)
+
 
 
     this.store$.pipe(
@@ -33,11 +32,8 @@ export class AuthGuard implements CanActivate {
     ).subscribe(state=>{
       if (state.authorized===true){
         this.isAuth=true
-        console.log("authorized true")
-
       }else{
         this.isAuth=false
-        console.log("authorized false")
       }
 
     })

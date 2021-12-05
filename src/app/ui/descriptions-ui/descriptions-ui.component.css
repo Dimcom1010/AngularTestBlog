@@ -1,14 +1,18 @@
 .button_conteiner button{
   display: flex;
+  max-width: 800px;
 }
 .descriptions_row{
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin: 25px 0;
+  border: #dedede solid 1px;
 }
 .descriptions_left_column{
   display: flex;
   width: 40%;
+  padding: 7px;
 
 }
 .descriptions_right_column{

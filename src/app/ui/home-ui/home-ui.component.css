@@ -4,11 +4,47 @@
   justify-content: center;
 
 }
+.anim_conteiner{
+  position: relative;
+}
 .img_conteiner img{
+  width: 600px;
   display: flex;
   margin: 0 0 40px;
+}
+.img_logo{
+  position: relative;
+}
+.img_pen{
+  position: absolute;
+  display: block;
+  transform: scale(0.4, 0.4);
+  top:-20px;
+  left:40px;
+  animation-name:pen ;
+  animation-direction: alternate;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+
 }
 .button_conteiner{
   display: flex;
   justify-content: center;
+}
+@keyframes pen {
+  0%{
+
+    left:0px;
+  }
+  10%{
+
+  }
+  50%{
+
+    left:40px
+  }
+  100%{
+
+    left:0px
+  }
 }

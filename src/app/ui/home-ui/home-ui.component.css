@@ -8,9 +8,9 @@
   position: relative;
 }
 .img_conteiner img{
-  width: 600px;
+  max-width: 600px;
   display: flex;
-  margin: 0 0 40px;
+  margin: 0px;
 }
 .img_logo{
   position: relative;
@@ -18,9 +18,10 @@
 .img_pen{
   position: absolute;
   display: block;
-  transform: scale(0.4, 0.4);
-  top:-20px;
-  left:40px;
+  transform: scale(0.7, 0.7);
+
+  top:140px;
+
   animation-name:pen ;
   animation-direction: alternate;
   animation-duration: 6s;
@@ -34,17 +35,17 @@
 @keyframes pen {
   0%{
 
-    left:0px;
+    left:180px;
   }
   10%{
 
   }
   50%{
 
-    left:40px
+    left:220px
   }
   100%{
 
-    left:0px
+    left:180px
   }
 }

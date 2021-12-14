@@ -8,7 +8,6 @@
     <button mat-menu-item routerLink="">Главная</button>
     <button mat-menu-item routerLink="blogs/">Блоги</button>
     <button mat-menu-item routerLink="charts/">Статистика</button>
-    <button mat-menu-item routerLink="module/">Модуль Статистика</button>
     <button mat-menu-item routerLink="login/" *ngIf="!loadSelector">Войти</button>
     <button mat-menu-item routerLink="login/" *ngIf="loadSelector" (click)="onlogOut()">Выйти</button>
   </mat-menu>
@@ -18,7 +17,6 @@
     <div class="menu__item" routerLink="">Главная</div>
     <div class="menu__item" routerLink="blogs/" *ngIf="loadSelector">Блоги</div>
     <div class="menu__item" routerLink="charts/" *ngIf="loadSelector">Статистика</div>
-    <div class="menu__item" routerLink="module/" *ngIf="loadSelector">Модуль статистика</div>
     <div class="menu__item" routerLink="login/" *ngIf="!loadSelector">Войти</div>
     <div class="menu__item" (click)="onlogOut()" *ngIf="loadSelector" >Выйти</div>
   </div>

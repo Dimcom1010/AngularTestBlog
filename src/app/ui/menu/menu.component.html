@@ -5,20 +5,20 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="">Главная</button>
-    <button mat-menu-item routerLink="blogs/">Блоги</button>
-    <button mat-menu-item routerLink="charts/">Статистика</button>
-    <button mat-menu-item routerLink="login/" *ngIf="!loadSelector">Войти</button>
-    <button mat-menu-item routerLink="login/" *ngIf="loadSelector" (click)="onlogOut()">Выйти</button>
+    <button mat-menu-item routerLink="">ГЛАВНАЯ</button>
+    <button mat-menu-item routerLink="blogs/">БЛОГИ</button>
+    <button mat-menu-item routerLink="charts/">СТАТИСТИКА</button>
+    <button mat-menu-item routerLink="login/" *ngIf="!loadSelector">ВОЙТИ</button>
+    <button mat-menu-item routerLink="login/" *ngIf="loadSelector" (click)="onlogOut()">ВЫЙТИ</button>
   </mat-menu>
   </div>
 
   <div class="menu__items">
-    <div class="menu__item" routerLink="">Главная</div>
-    <div class="menu__item" routerLink="blogs/" *ngIf="loadSelector">Блоги</div>
-    <div class="menu__item" routerLink="charts/" *ngIf="loadSelector">Статистика</div>
-    <div class="menu__item" routerLink="login/" *ngIf="!loadSelector">Войти</div>
-    <div class="menu__item" (click)="onlogOut()" *ngIf="loadSelector" >Выйти</div>
+    <div class="menu__item" routerLink="">ГЛАВНАЯ</div>
+    <div class="menu__item" routerLink="blogs/" *ngIf="loadSelector">БЛОГИ</div>
+    <div class="menu__item" routerLink="charts/" *ngIf="loadSelector">СТАТИСТИКА</div>
+    <div class="menu__item" routerLink="login/" *ngIf="!loadSelector">ВОЙТИ</div>
+    <div class="menu__item" (click)="onlogOut()" *ngIf="loadSelector" >ВЫЙТИ</div>
   </div>
 </mat-toolbar>
 
